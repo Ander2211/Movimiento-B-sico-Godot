@@ -1,39 +1,8 @@
-# Movimiento-B-sico-Godot
-Movimiento básico 3D para juego mobile en Godot v3.4
+## Movimiento básico 3D para juego mobile en Godot v3.4
+Movimiento Basico para juego 3D para Android o IOS 
 
-# Free Godot 3 demos
+por el momento es un portotiopo puede contener errores como falta de coliciones con otros objetos 
 
-Here are all the Godot 3.0 code projects from our tutorials on the [ GDquest Youtube channel ](http://youtube.com/c/gdquest).
 
-➡ Follow us on [Twitter](https://twitter.com/NathanGDQuest) and [YouTube](https://www.youtube.com/c/gdquest/) for free game creation tutorials, tips, and news! Get one of our [Godot game creation courses](https://gdquest.mavenseed.com/) to support our work on Free Software.
 
-![Four screenshots of the projects in Godot](https://raw.githubusercontent.com/GDquest/Godot-engine-tutorial-demos/master/img/godot-3-demos-fs8.png)
 
-## Links
-
-1. [Godot 3 tutorials](https://www.youtube.com/playlist?list=PLhqJJNjsQ7KF0o0ke_CA2QlqK8BxQNSFS)
-2. [Godot 3 course](https://gumroad.com/gdquest) (Premium)
-
-GDquest is on [ Twitter ](https://twitter.com/NathanGDquest), [Facebook](https://www.facebook.com/gdquest/) and [Discord](https://discord.gg/87NNb3Z)
-
-## Available demos
-
-You can find all the Godot 3 demos are in the `/2018` folder.
-
-- **Tool mode draw in viewport**
-- **Camera 2d rig**
-- **Character scene setup**
-- **Astar pathfinding**
-- **Simple sword attack**
-- **Finite state machine**
-- **Screen sizes example**
-- **Game user interface**
-- **Intro to ui containers**
-- **Title screen** with keyboard and mouse support
-- **Grid based movement** in 2d
-
-And more to come!
-
-Some projects have both a `start` and an `end` version so you can follow along with the [ tutorials ](https://www.youtube.com/playlist?list=PLhqJJNjsQ7KF0o0ke_CA2QlqK8BxQNSFS) and use the final result as a reference.
-
-## Contributors welcome!
