@@ -1,0 +1,90 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://botones/Stick_press.png" type="Texture" id=1]
+[ext_resource path="res://botones/Stick_normal.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/VirtualJoystick.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Stick.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=5]
+[ext_resource path="res://botones/B_normal.png" type="Texture" id=6]
+[ext_resource path="res://botones/A_normal.png" type="Texture" id=7]
+[ext_resource path="res://botones/B_press.png" type="Texture" id=8]
+[ext_resource path="res://botones/A_press.png" type="Texture" id=9]
+
+[sub_resource type="OpenSimplexNoise" id=3]
+seed = 5
+octaves = 9
+
+[sub_resource type="NoiseTexture" id=4]
+flags = 31
+noise = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.815686, 1, 1, 1 )
+albedo_texture = SubResource( 4 )
+
+[sub_resource type="PlaneMesh" id=6]
+material = SubResource( 5 )
+size = Vector2( 120, 120 )
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Plano" type="MeshInstance" parent="."]
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="Player" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 5 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.632611, 0.77447, 0, -0.77447, 0.632611, 0, 8.0118, 11.3063 )
+fov = 63.7
+size = 0.1
+
+[node name="VirtualJoystick" type="Node2D" parent="Player"]
+script = ExtResource( 3 )
+stick_position = Vector2( -0.4, 0.9 )
+button_a_position = Vector2( 0.9, 0.5 )
+button_b_position = Vector2( 0.7, 0.8 )
+
+[node name="Stick" type="TouchScreenButton" parent="Player/VirtualJoystick"]
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 1 )
+action = "stick"
+script = ExtResource( 4 )
+
+[node name="button_a" type="TouchScreenButton" parent="Player/VirtualJoystick"]
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 9 )
+action = "button_a"
+
+[node name="button_b" type="TouchScreenButton" parent="Player/VirtualJoystick"]
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 8 )
+action = "button_a"
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.674083, -0.738655, 0, 0.738655, 0.674083, 0.620522, 5.64441, -8.4629 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 0.524736, 0.84662, 0.0888115, 0.776834, -0.518906, 0.356743, 0.348111, -0.118204, -0.929971, 0.620522, 0.886934, 10.7107 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0141193, -0.9999, 0, 0.9999, 0.0141193, 24.7494, 0.799605, -0.197745 )
